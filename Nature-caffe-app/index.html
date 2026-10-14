@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nature Caffe</title>
+<meta name="description" content="Lojalitetsapp för Nature Caffe: stämpelkort, meny och kontakt.">
+<meta name="theme-color" content="#4F6F5C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- HEM -->
+  <section class="screen" id="hem" aria-labelledby="hem-title">
+    <header class="brand brand--large">
+      <p class="brand__tagline">FRUKOST • LUNCH • FIKA</p>
+      <h1 class="brand__name" id="hem-title">Nature Caffe</h1>
+      <span class="brand__line" aria-hidden="true"></span>
+    </header>
+    <div class="content">
+      <p class="greeting">Hej Sara!</p>
+
+      <section class="card stampcard" aria-labelledby="card-title">
+        <div class="stampcard__top">
+          <h2 class="stampcard__title" id="card-title">Ditt stämpelkort</h2>
+          <p class="stampcard__count"><span id="stamp-count">6</span> <span class="stampcard__of">av 10</span></p>
+        </div>
+        <ol class="beans" id="beans" aria-label="Stämplar"></ol>
+        <div class="progress" aria-hidden="true"><span class="progress__bar" id="progress-bar"></span></div>
+        <p class="stampcard__hint" id="stamp-hint">4 bönor kvar till en <strong>gratis kaffe</strong></p>
+      </section>
+
+      <a class="btn btn--primary" id="stamp-btn" href="#stampel">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.5M14 20.5h.5M17.5 20.5H21V17"/></svg>
+        <span id="stamp-btn-label">Få stämpel</span>
+      </a>
+
+      <a class="card deal" href="#meny">
+        <img class="deal__img" src="images/kaffe.png" alt="Kaffe som hälls upp i en grön mugg" width="120" height="128">
+        <div class="deal__body">
+          <span class="badge">DAGENS DEAL</span>
+          <h2 class="deal__title">Kanelbulle + bryggkaffe</h2>
+          <p class="deal__price">59 kr <s>74 kr</s></p>
+        </div>
+      </a>
+
+      <button type="button" class="link-btn" id="reset-demo">Återställ demo</button>
+    </div>
+  </section>
+
+  <!-- FÅ STÄMPEL -->
+  <section class="screen screen--green" id="stampel" aria-labelledby="stampel-title" hidden>
+    <div class="content content--green">
+      <a class="back" href="#hem">
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        Tillbaka
+      </a>
+
+      <div class="stamp-view" id="qr-view">
+        <h1 class="stamp-view__title" id="stampel-title">Visa din QR-kod</h1>
+        <span class="brand__line" aria-hidden="true"></span>
+        <p class="stamp-view__text">Personalen skannar koden i kassan, så får du din stämpel.</p>
+        <div class="qr-card">
+          <svg role="img" aria-label="Din QR-kod" width="196" height="196" viewBox="0 0 21 21" shape-rendering="crispEdges">
+            <rect x="0" y="0" width="7" height="7" fill="#3E4451"/><rect x="1" y="1" width="5" height="5" fill="#FFFFFF"/><rect x="2" y="2" width="3" height="3" fill="#3E4451"/>
+            <rect x="14" y="0" width="7" height="7" fill="#3E4451"/><rect x="15" y="1" width="5" height="5" fill="#FFFFFF"/><rect x="16" y="2" width="3" height="3" fill="#3E4451"/>
+            <rect x="0" y="14" width="7" height="7" fill="#3E4451"/><rect x="1" y="15" width="5" height="5" fill="#FFFFFF"/><rect x="2" y="16" width="3" height="3" fill="#3E4451"/>
+            <path fill="#3E4451" d="M8 0h1v1H8zM10 1h2v1h-2zM9 3h1v2H9zM11 4h2v1h-2zM8 6h1v1H8zM10 6h1v2h-1zM12 7h1v1h-1zM0 8h2v1H0zM3 9h2v1H3zM5 8h1v2H5zM7 9h2v1H7zM10 9h3v1h-3zM14 8h1v2h-1zM16 9h2v1h-2zM19 8h2v1h-2zM1 11h1v2H1zM3 12h3v1H3zM8 11h1v1H8zM9 12h2v2H9zM12 11h2v1h-2zM15 11h1v3h-1zM17 12h2v1h-2zM20 11h1v2h-1zM8 15h2v1H8zM11 15h1v2h-1zM9 17h1v2H9zM8 20h3v1H8zM13 14h1v1h-1zM12 18h2v1h-2zM14 16h2v1h-2zM17 15h1v2h-1zM19 15h2v1h-2zM16 18h1v1h-1zM18 18h2v2h-2zM15 20h2v1h-2zM20 20h1v1h-1z"/>
+          </svg>
+          <p class="qr-card__label" id="qr-label">SARA · 6 AV 10</p>
+        </div>
+        <button type="button" class="btn btn--ghost" id="scan-btn">Simulera skanning (prototyp)</button>
+      </div>
+
+      <div class="stamp-view stamp-view--done" id="done-view" hidden>
+        <div class="done-icon" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="7" ry="10" transform="rotate(30 12 12)" fill="#6B4A32"/><path d="M15.5 4.5c-3.5 2.5-1.5 6-3.5 7.5s-2.5 4.5-1.5 7.5" fill="none" stroke="#F5F1E8" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <h1 class="stamp-view__title" id="done-title">Stämpel tillagd!</h1>
+        <p class="stamp-view__text" id="done-text">Du har nu 7 av 10 bönor.</p>
+        <a class="btn btn--light" href="#hem" id="done-btn">Klar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENY -->
+  <section class="screen" id="meny" aria-labelledby="meny-title" hidden>
+    <header class="brand">
+      <p class="brand__tagline">FRUKOST • LUNCH • FIKA</p>
+      <p class="brand__name">Nature Caffe</p>
+      <span class="brand__line" aria-hidden="true"></span>
+    </header>
+    <img class="hero-img" src="images/salladbowl.jpg" alt="Salladsbowl med kikärtor, rödbetor, avokado och surdegsbröd" width="576" height="448">
+    <div class="content">
+      <div class="page-head">
+        <h1 class="page-title" id="meny-title">Meny</h1>
+        <p class="page-sub">Allt är ekologiskt och 100 % veganskt</p>
+      </div>
+      <div class="chips" role="tablist" aria-label="Kategorier" id="chips"></div>
+      <ul class="menu-list" id="menu-list" role="tabpanel" aria-live="polite"></ul>
+    </div>
+  </section>
+
+  <!-- OM OSS -->
+  <section class="screen" id="om-oss" aria-labelledby="om-title" hidden>
+    <header class="brand">
+      <p class="brand__tagline">FRUKOST • LUNCH • FIKA</p>
+      <p class="brand__name">Nature Caffe</p>
+      <span class="brand__line" aria-hidden="true"></span>
+    </header>
+    <img class="hero-img" src="images/kaffe.png" alt="Kaffe som hälls upp i en grön mugg" width="600" height="600">
+    <div class="content">
+      <h1 class="page-title" id="om-title">Om Nature Caffe</h1>
+      <p class="lead">Vi brinner för god mat och gemenskap. Hos oss ska varje gäst känna sig välkommen, för en snabb frukost, en lugn lunch eller en fika med vänner.</p>
+      <ul class="facts">
+        <li class="card fact">
+          <span class="fact__icon"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F6F5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-13 14-14-1 9-6 14-14 14z"/><path d="M5 19l7-7"/></svg></span>
+          <div><p class="fact__title">100 % veganskt</p><p class="fact__text">Hela menyn, även fikat</p></div>
+        </li>
+        <li class="card fact">
+          <span class="fact__icon"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4F6F5C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/><path d="M12 14c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5z"/></svg></span>
+          <div><p class="fact__title">Ekologiska råvaror</p><p class="fact__text">Glutenfritt och raw finns alltid</p></div>
+        </li>
+        <li class="card fact">
+          <span class="fact__icon fact__icon--gold"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="6" ry="9" transform="rotate(30 12 12)" fill="#6B4A32"/><path d="M15 5.5c-3 2-1.3 5.2-3 6.5s-2.2 4-1.3 6.5" fill="none" stroke="#F6E7C1" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          <div><p class="fact__title">Kaffe från Karlstad</p><p class="fact__text">Rostat av Kersh kafferosteri</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="screen" id="kontakt" aria-labelledby="kontakt-title" hidden>
+    <header class="brand">
+      <p class="brand__tagline">FRUKOST • LUNCH • FIKA</p>
+      <p class="brand__name">Nature Caffe</p>
+      <span class="brand__line" aria-hidden="true"></span>
+    </header>
+    <div class="content">
+      <h1 class="page-title" id="kontakt-title">Kontakt</h1>
+      <div class="map" role="img" aria-label="Karta som visar Nature Caffe på Kungsgatan 13 i Göteborg">
+        <svg aria-hidden="true" viewBox="0 0 342 140" preserveAspectRatio="xMidYMid slice"><path d="M0 50L342 34M0 112L342 100M90 0L114 140M250 0L232 140" stroke="#F5F1E8" stroke-width="10" fill="none"/><path d="M0 80L342 70" stroke="#F5F1E8" stroke-width="5" fill="none"/></svg>
+        <svg class="map__pin" aria-hidden="true" width="40" height="40" viewBox="0 0 24 24"><path d="M12 22s-7-6.4-7-12a7 7 0 0 1 14 0c0 5.6-7 12-7 12z" fill="#4F6F5C"/><circle cx="12" cy="10" r="2.6" fill="#F5F1E8"/></svg>
+      </div>
+      <dl class="card info">
+        <div class="info__row"><dt>Adress</dt><dd>Kungsgatan 13<br>Göteborg</dd></div>
+        <div class="info__row"><dt>Öppettider</dt><dd>Mån–fre 07–17<br>Lör–sön 09–18</dd></div>
+        <div class="info__row"><dt>Telefon</dt><dd>070-231 23 23</dd></div>
+        <div class="info__row"><dt>E-post</dt><dd>Nature.cafe@outlook.se</dd></div>
+      </dl>
+      <div class="btn-row">
+        <a class="btn btn--primary btn--small" href="tel:+46702312323">Ring oss</a>
+        <a class="btn btn--outline btn--small" href="https://www.google.com/maps/search/?api=1&query=Kungsgatan+13+G%C3%B6teborg" target="_blank" rel="noopener">Vägbeskrivning</a>
+      </div>
+      <h2 class="section-title">Följ oss</h2>
+      <div class="socials">
+        <a class="pill" href="#" aria-disabled="true">Instagram</a>
+        <a class="pill" href="#" aria-disabled="true">Facebook</a>
+        <a class="pill" href="#" aria-disabled="true">TikTok</a>
+      </div>
+    </div>
+  </section>
+
+  <nav class="tabbar" aria-label="Huvudmeny" id="tabbar">
+    <a href="#hem" data-tab="hem"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Hem</a>
+    <a href="#meny" data-tab="meny"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 6h14M5 12h14M5 18h14"/></svg>Meny</a>
+    <a href="#om-oss" data-tab="om-oss"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>Om oss</a>
+    <a href="#kontakt" data-tab="kontakt"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Kontakt</a>
+  </nav>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
